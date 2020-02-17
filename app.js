@@ -11,7 +11,11 @@ const config = require('./config/database');
 mongoose.connect(config.database, {
     useUnifiedTopology: true,
     useNewUrlParser: true
-});
+}).catch(
+    error => {
+        console.log(error);
+    }
+);
 
 // On Connection
 mongoose.connection.on('connected', () => {
@@ -50,6 +54,10 @@ app.use('/users', users);
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid Endpoint');
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Start Server
