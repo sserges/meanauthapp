@@ -39,7 +39,7 @@ export function tokenGetter() {
         tokenGetter,
         whitelistedDomains: [
           'localhost:4200',
-          'node-mean-145.herokuapp.com'
+          // 'node-mean-145.herokuapp.com'
         ],
       }
     }),
