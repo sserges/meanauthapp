@@ -19,13 +19,13 @@ export class AuthService {
   registerUser(user) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.httpClient.post('http://localhost:3000/users/register', user, {headers});
+    return this.httpClient.post('users/register', user, {headers});
   }
 
   authenticateUser(user) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.httpClient.post('http://localhost:3000/users/authenticate', user, {headers});
+    return this.httpClient.post('users/authenticate', user, {headers});
   }
 
   getProfile() {
@@ -33,7 +33,7 @@ export class AuthService {
     const headers = new HttpHeaders().set('Authorization', this.authToken);
     // headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.httpClient.get('http://localhost:3000/users/profile', {headers});
+    return this.httpClient.get('users/profile', {headers});
   }
 
   storeUserData(token, user) {
