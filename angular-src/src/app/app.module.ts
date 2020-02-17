@@ -37,7 +37,10 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        whitelistedDomains: ['localhost:4200'],
+        whitelistedDomains: [
+          'localhost:4200',
+          'node-mean-145.herokuapp.com'
+        ],
       }
     }),
     AppRoutingModule
